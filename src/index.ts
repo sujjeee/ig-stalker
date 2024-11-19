@@ -33,7 +33,7 @@ app.post(
       const stories = await getInstaStory(username, c.env)
 
       if (stories.length === 0) {
-        return c.json({ message: "No stories found" }, 404)
+        return c.json({ message: "No stories found" }, 200)
       }
 
       let sentCount = 0
