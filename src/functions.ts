@@ -20,7 +20,9 @@ export async function getInstaStory(username: string, env: Env) {
   try {
     const response = await fetch(`${env.BASE_IG_URL}/${username}`)
     const data = await response.json()
-    return processStories(data)
+
+    const proccessedData = processStories(data)
+    return proccessedData
   } catch (error) {
     console.error("Error fetching Instagram story:", error)
     return []
